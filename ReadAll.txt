@@ -1,0 +1,18 @@
+ let ReadAll = () => {
+    Service.ReadAll().then(
+      response => {
+
+        setData(response.data)
+      }
+    ).catch(
+      (error) => { console.log('this is error', error) }
+    )
+  }
+
+  useEffect(() => {
+    ReadAll()
+  })
+
+   let Delete = (id) => {
+    Service.DeleteById(id).then(() => { alert('Deleted Record') })
+  }
